@@ -1,4 +1,4 @@
-import { ADD_UMATCHED, CHANGE_TO_MATCHED } from './actions';
+import { ADD_UMATCHED, CHANGE_STATUS } from './actions';
 import { combineReducers } from 'redux';
 
 const ohMyGoldCopy = combineReducers({
@@ -17,11 +17,11 @@ function trades(state = [], action) {
           status: action.status
         }
       ];
-    case CHANGE_TO_MATCHED:
+    case CHANGE_STATUS:
       return state.map((trade, index) => {
         if (trade.ssbtradeid === action.ssbtradeid) {
           return Object.assign({}, trade, {
-            status: action.status
+            status: trade.status === 'MATCHED' ? 'UNMATCHED' : 'MATCHED'
           });
         }
         return trade;

@@ -3,7 +3,7 @@
  */
 
 export const ADD_UMATCHED = 'ADD_UMATCHED';
-export const CHANGE_TO_MATCHED = 'CHANGE_TO_MATCHED';
+export const CHANGE_STATUS = 'CHANGE_STATUS';
 
 export function addUnmatched(ssbtradeid, tradedate, amount) {
   return {
@@ -15,6 +15,6 @@ export function addUnmatched(ssbtradeid, tradedate, amount) {
   };
 }
 
-export function changeToMatched(ssbtradeid) {
-  return { type: CHANGE_TO_MATCHED, ssbtradeid, status: 'MATCHED' };
+export function changeStatus(ssbtradeid) {
+  return { type: CHANGE_STATUS, ssbtradeid };
 }

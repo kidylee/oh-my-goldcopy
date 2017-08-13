@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Trades from '../components/Trades';
-import { changeToMatched } from '../actions';
+import { changeStatus } from '../actions';
 
 function getMatched(trades) {
   return trades.filter(trade => {
@@ -15,8 +15,8 @@ const mapStateToPros = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onUnmatchedClick: ssbtradeid => {
-      dispatch(changeToMatched(ssbtradeid));
+    onClick: ssbtradeid => {
+      dispatch(changeStatus(ssbtradeid));
     }
   };
 };

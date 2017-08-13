@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Trades from '../components/Trades';
+import { changeStatus } from '../actions';
 
 function getMatched(trades) {
   return trades.filter(trade => {
@@ -13,7 +14,11 @@ const mapStateToPros = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    onClick: ssbtradeid => {
+      dispatch(changeStatus(ssbtradeid));
+    }
+  };
 };
 
 const MatchedTrades = connect(mapStateToPros, mapDispatchToProps)(Trades);

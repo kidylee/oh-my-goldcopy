@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, Table } from 'semantic-ui-react';
 import Trade from './Trade';
-const Trades = ({ trades, onUnmatchedClick }) =>
+const Trades = ({ trades, onClick }) =>
   <div>
     <Header as="h2">Matched</Header>
     <Table celled>
@@ -13,12 +13,7 @@ const Trades = ({ trades, onUnmatchedClick }) =>
       </Table.Header>
       <Table.Body>
         {trades.map(trade =>
-          <Trade
-            {...trade}
-            onClick={
-              onUnmatchedClick ? () => onUnmatchedClick(trade.ssbtradeid) : null
-            }
-          />
+          <Trade {...trade} onClick={() => onClick(trade.ssbtradeid)} />
         )}
       </Table.Body>
     </Table>
