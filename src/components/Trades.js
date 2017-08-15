@@ -12,8 +12,8 @@ const Trades = ({ trades, onClick }) =>
         <Table.HeaderCell>Status</Table.HeaderCell>
       </Table.Header>
       <Table.Body>
-        {trades.map(trade =>
-          <Trade {...trade} onClick={() => onClick(trade.ssbtradeid)} />
+        {trades.map((trade, index) =>
+          <Trade key={index} {...trade} onClick={() => onClick(trade.ssbtradeid)} />
         )}
       </Table.Body>
     </Table>

@@ -53,7 +53,7 @@ const mapStateToPros = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => { // eslint-disable-line
   return {};
 };
 

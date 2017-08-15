@@ -8,6 +8,7 @@ const ohMyGoldCopy = combineReducers({
 function trades(state = [], action) {
   switch (action.type) {
     case ADD_UMATCHED:
+      new Notification("New Unmatched Transaction")
       return [
         ...state,
         {
@@ -18,7 +19,7 @@ function trades(state = [], action) {
         }
       ];
     case CHANGE_STATUS:
-      return state.map((trade, index) => {
+      return state.map((trade) => {
         if (trade.ssbtradeid === action.ssbtradeid) {
           return Object.assign({}, trade, {
             status: trade.status === 'MATCHED' ? 'UNMATCHED' : 'MATCHED'
