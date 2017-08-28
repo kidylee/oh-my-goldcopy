@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "es6-promise": "^4.1.1",
     "husky": "^0.14.3",
-    "lint-staged": "^4.0.3",
+    "isomorphic-fetch": "^2.2.1",
+    "lint-staged": "^4.0.4",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "prettier": "^1.5.3",
@@ -32,7 +34,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint-plugin-react": "^7.2.1",
+    "eslint-plugin-react": "^7.3.0",
     "reactotron-react-js": "^1.12.2",
     "reactotron-redux": "^1.12.2"
   }
